@@ -1,8 +1,95 @@
-.App {
-  text-align: center;
+body {
+	background-color: rgb(61, 62, 66);
 }
 
-.App-logo {
+.App {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 60%;
+}
+
+.exit {
+	height: 25px;
+	width: 25px;
+	background-image: url("./icon/close.png");
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+}
+
+.task {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.task p {
+	color: rgb(212, 215, 228);
+	padding: 1em;
+	margin: 0;
+	margin-bottom: 2vh;
+}
+
+form {
+	margin-top: 2vh;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.label {
+	color: rgb(212, 215, 228);
+	font-weight: bolder;
+	font-size: 1.5vw;
+}
+
+.taskInput {
+	width: 40vh;
+	height: 2vh;
+	background-color: rgb(61, 62, 66) !important;
+	outline: none;
+	border: 1px rgb(212, 215, 228) solid;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: rgb(212, 215, 228);
+	font-size: medium;
+	margin-right: 8vw;
+}
+
+input:-internal-autofill-selected {
+	background-color: rgb(61, 62, 66);
+	color: rgb(212, 215, 228);
+}
+
+/* 
+.taskInput::placeholder {
+	color: rgb(126, 127, 134);
+} */
+
+.submit {
+	background-color: rgb(61, 62, 66) !important;
+	border: 1px rgb(212, 215, 228) solid;
+	color: rgb(212, 215, 228);
+	padding: 10px 20px;
+	font-size: 1.2vw;
+	border-radius: 5px;
+	margin-top: 2vh;
+	font-weight: bold;
+	outline: none;
+	transition: background-color 200ms;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background-color: rgb(101, 102, 107);
+	transition: background-color 200ms;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +122,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
