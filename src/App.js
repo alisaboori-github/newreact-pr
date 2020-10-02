@@ -24,7 +24,8 @@ import './App.css';
 // }
 class App extends React.Component {
 	state = {
-		task: null
+		task: null,
+		items:[]
 	}
 	remove = (e) => {
 		e.target.parentNode.remove();
@@ -37,17 +38,13 @@ class App extends React.Component {
 	}
 	submit = (e) => {
 		e.preventDefault();
-		let container = document.createElement('div');
-		container.className = 'container';
-		let exit = document.createElement('div')
-		exit.className = 'exit';
-		exit.id = 'exit';
-		exit.onclick = this.remove
-		let paragraph = document.createElement("p");
-		paragraph.innerText = this.state.task;
-		container.appendChild(paragraph);
-		container.appendChild(exit);
-		document.getElementById('task').appendChild(container);
+		let container = (<div className="container">
+			<p>{this.state.task}</p>
+			<div id="exit" className="exit" onClick={this.remove}></div>
+			</div>);
+			this.setState({
+				items:this.state.items.concat(container)
+			})
 		// try {
 		// 	document.getElementById('task').appendChild(paragraph);
 		// } catch (error) {
@@ -57,7 +54,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='App'>
-				<div id='task' className="task"></div>
+				<div id='task' className="task">{this.state.items}</div>
 				<form action="" autoComplete='off'>
 					<label htmlFor="textbox" className='label'>your task: </label>
 					<input onChange={this.tasks} type="text" name='textbox' placeholder='type here ...' className='taskInput' />
